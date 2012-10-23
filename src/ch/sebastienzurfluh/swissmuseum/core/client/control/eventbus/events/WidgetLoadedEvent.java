@@ -19,7 +19,11 @@
 
 package ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.events;
 
+<<<<<<< Updated upstream
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.Event;
+=======
+import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.AbstractEvent;
+>>>>>>> Stashed changes
 import ch.sebastienzurfluh.swissmuseum.core.client.view.menuinterface.MenuWidget;
 
 /**
@@ -28,7 +32,11 @@ import ch.sebastienzurfluh.swissmuseum.core.client.view.menuinterface.MenuWidget
  * @author Sebastien Zurfluh
  *
  */
+<<<<<<< Updated upstream
 public class WidgetLoadedEvent extends Event {
+=======
+public class WidgetLoadedEvent extends AbstractEvent {
+>>>>>>> Stashed changes
 	private MenuWidget widget;
 	
 	/**

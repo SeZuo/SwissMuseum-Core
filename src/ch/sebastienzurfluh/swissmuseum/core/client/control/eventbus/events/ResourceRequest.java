@@ -19,7 +19,11 @@
 
 package ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.events;
 
+<<<<<<< Updated upstream
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.Event;
+=======
+import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.AbstractEvent;
+>>>>>>> Stashed changes
 import ch.sebastienzurfluh.swissmuseum.core.client.model.structure.DataReference;
 
 /**
@@ -28,7 +32,11 @@ import ch.sebastienzurfluh.swissmuseum.core.client.model.structure.DataReference
  * @author Sebastien Zurfluh
  *
  */
+<<<<<<< Updated upstream
 public class ResourceRequest extends Event {
+=======
+public class ResourceRequest extends AbstractEvent {
+>>>>>>> Stashed changes
 	private DataReference requestReference;
 	
 	/**

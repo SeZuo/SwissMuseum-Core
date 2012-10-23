@@ -19,7 +19,11 @@
 
 package ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus;
 
+<<<<<<< Updated upstream
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.Event.EventType;
+=======
+import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.AbstractEvent.EventType;
+>>>>>>> Stashed changes
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.events.PageChangeRequest;
 import ch.sebastienzurfluh.swissmuseum.core.client.model.Model;
 import ch.sebastienzurfluh.swissmuseum.core.client.model.structure.DataReference;
@@ -52,7 +56,11 @@ public class PageRequestEventHandler implements EventBusListener {
 
 	private DataReference cachedReference = null;
 	@Override
+<<<<<<< Updated upstream
 	public void notify(Event e) {
+=======
+	public void notify(AbstractEvent e) {
+>>>>>>> Stashed changes
 		if(e instanceof PageChangeRequest) {
 			final PageChangeRequest pageChangeRequest = (PageChangeRequest) e;
 			

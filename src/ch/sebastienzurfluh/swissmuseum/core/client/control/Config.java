@@ -11,5 +11,9 @@ public class Config {
 	/**
 	 * How do you wanna start the app: BROWSE or EDIT?
 	 */
+<<<<<<< Updated upstream
 	public static final ViewMode START_VIEW_MODE = ViewMode.BROWSE;
+=======
+	public static final ViewMode START_VIEW_MODE = ViewMode.EDIT;
+>>>>>>> Stashed changes
 }

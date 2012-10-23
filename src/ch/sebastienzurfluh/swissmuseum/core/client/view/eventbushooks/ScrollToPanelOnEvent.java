@@ -23,10 +23,17 @@ import com.google.gwt.animation.client.Animation;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Panel;
 
+<<<<<<< Updated upstream
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.Event;
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.EventBus;
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.EventBusListener;
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.Event.EventType;
+=======
+import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.AbstractEvent;
+import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.EventBus;
+import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.EventBusListener;
+import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.AbstractEvent.EventType;
+>>>>>>> Stashed changes
 
 /**
  * This class listens to the page changes in order to scroll
@@ -53,7 +60,11 @@ public class ScrollToPanelOnEvent extends Animation implements EventBusListener 
 	}
 
 	@Override
+<<<<<<< Updated upstream
 	public void notify(Event e) {
+=======
+	public void notify(AbstractEvent e) {
+>>>>>>> Stashed changes
 		origin = Window.getScrollTop();
 		destination = panel.getElement().getAbsoluteTop();
 		

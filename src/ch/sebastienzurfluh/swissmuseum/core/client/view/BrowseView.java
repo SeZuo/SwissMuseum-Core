@@ -22,7 +22,11 @@ package ch.sebastienzurfluh.swissmuseum.core.client.view;
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.EventBus;
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.PageRequestEventHandler;
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.ResourceRequestEventHandler;
+<<<<<<< Updated upstream
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.Event.EventType;
+=======
+import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.AbstractEvent.EventType;
+>>>>>>> Stashed changes
 import ch.sebastienzurfluh.swissmuseum.core.client.model.Model;
 import ch.sebastienzurfluh.swissmuseum.core.client.view.animations.ScrollToTheTop;
 import ch.sebastienzurfluh.swissmuseum.core.client.view.eventbushooks.ScrollToPanelOnEvent;

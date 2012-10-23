@@ -36,8 +36,13 @@ public class ModelFactory {
 	/*
 	 * Create the right model depending of the environment. See the Config class for more details.
 	 */
+<<<<<<< Updated upstream
 	public static Model createModel() {
 		return Config.TEST_MODE ? createModel(Connector.TEST) : createModel(Connector.CAKE);
+=======
+	public static Model createModel(Config config) {
+		return config.TEST_MODE ? createModel(Connector.TEST) : createModel(Connector.CAKE);
+>>>>>>> Stashed changes
 	}
 	
 	private static Model createModel(Connector connector) {

@@ -19,35 +19,47 @@
 
 package ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus;
 
-<<<<<<< Updated upstream
-import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.Event.EventType;
-=======
-import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.AbstractEvent.EventType;
->>>>>>> Stashed changes
-
 /**
- * Superclass for {@link EventBus} listeners.
+ * This is the superclass for events using {@link EventBus}.
  * @author Sebastien Zurfluh
  *
  */
-public interface EventBusListener {
+public abstract class AbstractEvent {
+	
 	/**
-	 * Get the listened {@link EventType}.
-	 * @return the {@link EventType} this is listening to.
+	 * This enum lists all possible UI (View) event types. 
 	 */
-	EventType getEventType();
+	public enum EventType {
+		/*
+		 *  Fired when a new page is requested.
+		 */
+		PAGE_CHANGE_REQUEST,
+		/*
+		 *  Fired when a page change is approved.
+		 */
+		PAGE_CHANGE_EVENT,
+		/*
+		 *  Fired when a widget finished loading.
+		 */
+		WIDGET_LOADED_EVENT,
+		/*
+		 *  Fired when a resource is needed.
+		 */
+		RESOURCE_REQUEST,
+		/*
+		 * Fired when the user creates/modifies/deletes a model element
+		 */
+		ACTION,
+		/**
+		 * Fired when the user is requesting the means to take an {@code Action} on the DB.
+		 */
+		INTENT;
+	}
 
 	/**
-<<<<<<< Updated upstream
-	 * Call this function when an {@link Event} {@code e} has occurred.
-	 * @param e the notified {@link Event}.
+	 * An event has one only event type which you can fetch with this method.
+	 * @return get the event's type
 	 */
-	void notify(Event e);
-=======
-	 * Call this function when an {@link AbstractEvent} {@code e} has occurred.
-	 * @param e the notified {@link AbstractEvent}.
-	 */
-	void notify(AbstractEvent e);
->>>>>>> Stashed changes
+	public abstract EventType getType();
 
 }

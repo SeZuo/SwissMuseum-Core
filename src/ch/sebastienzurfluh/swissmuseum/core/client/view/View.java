@@ -1,10 +1,15 @@
 package ch.sebastienzurfluh.swissmuseum.core.client.view;
 
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.EventBus;
+<<<<<<< Updated upstream
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.IntentHandler;
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.PageRequestEventHandler;
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.ResourceRequestEventHandler;
 import ch.sebastienzurfluh.swissmuseum.core.client.model.CMSModel;
+=======
+import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.PageRequestEventHandler;
+import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.ResourceRequestEventHandler;
+>>>>>>> Stashed changes
 import ch.sebastienzurfluh.swissmuseum.core.client.model.Model;
 import ch.sebastienzurfluh.swissmuseum.core.client.model.Model.ViewMode;
 import ch.sebastienzurfluh.swissmuseum.core.client.patterns.Observable;
@@ -49,6 +54,7 @@ public class View extends SimplePanel implements Observer {
 	}
 	
 	private void setViewMode(ViewMode viewMode) {
+<<<<<<< Updated upstream
 		switch(viewMode) {
 		case EDIT:
 			CMSModel cmsModel = new CMSModel(model);
@@ -71,6 +77,11 @@ public class View extends SimplePanel implements Observer {
 		default:
 			break;
 		}
+=======
+		BrowseView view = new BrowseView(eventBus, pageRequestEventHandler, resourceRequestHandler, model);
+		this.setWidget(view);
+		view.afterAttached();
+>>>>>>> Stashed changes
 	}
 
 	@Override

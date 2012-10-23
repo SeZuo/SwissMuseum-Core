@@ -22,10 +22,17 @@ package ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus;
 import java.util.HashMap;
 import java.util.LinkedList;
 
+<<<<<<< Updated upstream
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.Event.EventType;
 
 /**
  * Manages to notify the listeners of a specific {@link Event}, when this {@link Event} is fired.
+=======
+import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.AbstractEvent.EventType;
+
+/**
+ * Manages to notify the listeners of a specific {@link AbstractEvent}, when this {@link AbstractEvent} is fired.
+>>>>>>> Stashed changes
  *
  * @author Sebastien Zurfluh
  *
@@ -44,7 +51,11 @@ public class EventBus {
 		listeners.get(listener.getEventType()).add(listener);
 	}
     
+<<<<<<< Updated upstream
     public void fireEvent(Event e) {
+=======
+    public void fireEvent(AbstractEvent e) {
+>>>>>>> Stashed changes
     	for (EventBusListener listener : listeners.get(e.getType())) {
 			listener.notify(e);
 		}
