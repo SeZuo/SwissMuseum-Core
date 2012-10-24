@@ -19,11 +19,7 @@
 
 package ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.events;
 
-<<<<<<< Updated upstream
-import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.Event;
-=======
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.AbstractEvent;
->>>>>>> Stashed changes
 import ch.sebastienzurfluh.swissmuseum.core.client.model.structure.DataReference;
 
 /**
@@ -32,11 +28,7 @@ import ch.sebastienzurfluh.swissmuseum.core.client.model.structure.DataReference
  * @author Sebastien Zurfluh
  *
  */
-<<<<<<< Updated upstream
-public class PageChangeRequest extends Event {
-=======
 public class PageChangeRequest extends AbstractEvent {
->>>>>>> Stashed changes
 	private DataReference pageId;
 	private boolean isforeignPageChangeRequest = false;
 	

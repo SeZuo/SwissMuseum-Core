@@ -1,8 +1,5 @@
 package ch.sebastienzurfluh.swissmuseum.core.client.patterns;
 
-<<<<<<< Updated upstream
-=======
-
 /**
  * Parce que j'emmerde Java.
  *
@@ -10,7 +7,6 @@ package ch.sebastienzurfluh.swissmuseum.core.client.patterns;
  *
  * @param <T>
  */
->>>>>>> Stashed changes
 public class MutablePrimitiveReference<T> {
 	public MutablePrimitiveReference(T value) {
 		this.value = value;

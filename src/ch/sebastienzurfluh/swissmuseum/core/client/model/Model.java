@@ -27,10 +27,6 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.events.DataType;
 import ch.sebastienzurfluh.swissmuseum.core.client.model.io.IConnector;
-<<<<<<< Updated upstream
-=======
-import ch.sebastienzurfluh.swissmuseum.core.client.model.io.IOConnector;
->>>>>>> Stashed changes
 import ch.sebastienzurfluh.swissmuseum.core.client.model.structure.Data;
 import ch.sebastienzurfluh.swissmuseum.core.client.model.structure.DataReference;
 import ch.sebastienzurfluh.swissmuseum.core.client.model.structure.MenuData;
@@ -468,8 +464,6 @@ public class Model extends Observable {
 	public ViewMode getCurrentViewMode() {
 		return viewMode;
 	}
-<<<<<<< Updated upstream
-=======
 
 	/**
 	 * @return the connector
@@ -477,5 +471,4 @@ public class Model extends Observable {
 	public IConnector getConnector() {
 		return connector;
 	}
->>>>>>> Stashed changes
 }

@@ -19,8 +19,6 @@
 
 package ch.sebastienzurfluh.swissmuseum.core.client.model.io;
 
-import java.util.Collection;
-
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
 import ch.sebastienzurfluh.swissmuseum.core.client.model.structure.Data;

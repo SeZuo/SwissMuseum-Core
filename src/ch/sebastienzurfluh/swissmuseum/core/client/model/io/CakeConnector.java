@@ -194,21 +194,6 @@ public class CakeConnector implements IOConnector {
 		}
 	}
 
-//	/**
-//	 * Caches
-//	 */
-//	private Cache<Integer, Collection<MenuData>> menuDataCache =
-//			new SimpleCache<Integer, Collection<MenuData>>();
-//
-//	private Cache<Integer, Data> dataCache =
-//			new SimpleCache<Integer, Data>();
-//
-//	private Cache<DataReference, Data> referencedDataCache =
-//			new SimpleCache<DataReference, Data>();
-//
-//	private Cache<Integer, ResourceData> resourceDataCache =
-//			new SimpleCache<Integer, ResourceData>();
-
 
 	/**
 	 *  list all possible requests and their command (url) in cake

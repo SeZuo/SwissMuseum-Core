@@ -19,11 +19,7 @@
 
 package ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus;
 
-<<<<<<< Updated upstream
-import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.Event.EventType;
-=======
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.AbstractEvent.EventType;
->>>>>>> Stashed changes
 
 /**
  * Superclass for {@link EventBus} listeners.
@@ -37,17 +33,9 @@ public interface EventBusListener {
 	 */
 	EventType getEventType();
 
-	/**
-<<<<<<< Updated upstream
-	 * Call this function when an {@link Event} {@code e} has occurred.
-	 * @param e the notified {@link Event}.
-	 */
-	void notify(Event e);
-=======
-	 * Call this function when an {@link AbstractEvent} {@code e} has occurred.
+	
+	/** Call this function when an {@link AbstractEvent} {@code e} has occurred.
 	 * @param e the notified {@link AbstractEvent}.
 	 */
 	void notify(AbstractEvent e);
->>>>>>> Stashed changes
-
 }
