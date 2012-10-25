@@ -12,8 +12,8 @@ gwt-unitCache/
 war/WEB-INF/
 src/META-INF/
 src/log4j.properties
-war/SwissMuseumParcours/*cache.*
-war/SwissMuseumParcours/hosted.html
-war/SwissMuseumParcours/junit-standards.html
-war/SwissMuseumParcours/junit.html
-war/SwissMuseumParcours/.junit_symbolMaps/
+war/SwissMuseumCore/*cache.*
+war/SwissMuseumCore/hosted.html
+war/SwissMuseumCore/junit-standards.html
+war/SwissMuseumCore/junit.html
+war/SwissMuseumCore/.junit_symbolMaps/

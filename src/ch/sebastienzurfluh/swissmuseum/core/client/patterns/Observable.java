@@ -9,13 +9,26 @@ public class Observable {
 		observerList.add(observer);
 	}
 	
+	/**
+	 * Delayed observer removal (because we don't want any concurrent modification.
+	 */
+	LinkedList<Observer> removeList = new LinkedList<Observer>();
+	
+	/**
+	 * Note that the removal is not synchronous and will only occur on the next event. This means
+	 * that if you remove an observer it may still be notified for the current event.
+	 * @param observer that shouldn't be notified anymore
+	 */
 	public void unsubscribeObserver(Observer observer) {
-		observerList.remove(observer);
+		removeList.add(observer);
 	}
     
     public void notifyObservers() {
-    	for (Observer observer : observerList) {
+    	// Clean the list of observer
+    	for (Observer observer : removeList)
+    		observerList.remove(observer);
+    	
+    	for (Observer observer : observerList)
 			observer.notifyObserver(this);
-		}
     }
 }

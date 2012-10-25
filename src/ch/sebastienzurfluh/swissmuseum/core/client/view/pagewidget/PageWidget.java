@@ -29,9 +29,7 @@ import ch.sebastienzurfluh.swissmuseum.core.client.patterns.Observer;
 
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
-import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.FlowPanel;
 
 
 /**
