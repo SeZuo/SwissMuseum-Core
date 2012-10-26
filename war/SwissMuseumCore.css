@@ -127,9 +127,11 @@ div {
 /********************** MENUS - TILE ******************************************/
 
 .tile {
-	display: inline;
-	float: left;
-	cursor: pointer;
+	margin-top: 1em;
+	-moz-box-shadow:    inset 0px 0px 10px 2px #EFEFEF;
+  	-webkit-box-shadow: inset 0px 0px 10px 2px #EFEFEF;
+ 	box-shadow:       	inset 0px 0px 10px 2px #EFEFEF;
+ 	border: 1px solid #E0E0E0
 }
 .tile-iconOnly {
 	display: inline;
@@ -148,17 +150,17 @@ div {
 	border: 1em solid red;
 }
 .tile-tileImage {
-	width: 4em;
-	height: 4em;
-	margin: 1em 0em 0em 1em;
+	width: 10em;
+	height: 10em;
+	margin: 1em 1em 1em 1em;
 	padding: 0em;
 	border: 0em;
 	background-color: grey;
 }
 .tile-tileImage-focus {
-	width: 4em;
-	height: 4em;
-	margin: 1em 0em 0em 1em;
+	width: 10em;
+	height: 10em;
+	margin: 1em 1em 1em 1em;
 	padding: 0em;
 	border: 0.1em solid red;
 	background-color: grey;

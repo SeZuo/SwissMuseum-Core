@@ -49,7 +49,7 @@ public class Tile extends FocusPanel implements MenuButton {
 	public Tile(MenuData menuData) {
 		this.menuReference = menuData.getReference();
 		this.priority = menuData.getPriorityNumber();
-
+		
 		tileImage = new Image(menuData.getSquareImgURL());
 		tileImage.setStyleName(stylePrimaryName + "-" + "tileImage");
 		tileImage.setAltText(menuData.getTitle());
@@ -83,14 +83,14 @@ public class Tile extends FocusPanel implements MenuButton {
 	private void setIconOnlyMode() {
 		System.out.println("Tile: " + this.toString() + " set icon mode");
 		setStyleName(stylePrimaryName + "-" + iconOnlyStyleDependentName);
-		
+		tilePanel.removeStyleName(stylePrimaryName);
 		details.setVisible(false);
 	}
 	
 	private void setDetailedMode() {
 		System.out.println("Tile: " + this.toString() + " set detailed mode");
 		setStyleName(stylePrimaryName + "-" + detailedStyleDependentName);
-		
+		tilePanel.setStyleName(stylePrimaryName);
 		details.setVisible(true);
 	}
 	
