@@ -1,5 +1,5 @@
 /*
- * Copyright 2012 Sebastien Zurfluh
+ * Copyright 2012-2013 Sebastien Zurfluh
  * 
  * This file is part of "Parcours".
  * 
@@ -22,7 +22,6 @@ package ch.sebastienzurfluh.swissmuseum.core.client.control;
 import ch.sebastienzurfluh.swissmuseum.core.client.model.Model;
 import ch.sebastienzurfluh.swissmuseum.core.client.model.io.CakeConnector;
 import ch.sebastienzurfluh.swissmuseum.core.client.model.io.LocalCakeConnector;
-import ch.sebastienzurfluh.swissmuseum.core.client.model.io.TestConnector;
 
 /**
  * Create test data with this factory.
