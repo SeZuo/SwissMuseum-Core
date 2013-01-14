@@ -72,13 +72,13 @@ public class Model extends Observable {
 	public Observable nextPageMenuObservable = new Observable();
 	
 	private Collection<MenuData> allPagesMenusInCurrentGroup;
+	/**
+	 * The set of pages in the current booklet
+	 */
 	public Observable allPagesMenusInCurrentGroupObservable = new Observable();
 	
 	private Collection<ResourceData> allNeededResources = new LinkedList<ResourceData>();
 	public Observable allNeededResourcesObservable = new Observable();
-	
-	private ViewMode viewMode = ViewMode.NONE;
-	public Observable viewModeObservable = new Observable();
 	
 	/**
 	 * Notify all observers of the model and of the selected observable.
@@ -147,8 +147,8 @@ public class Model extends Observable {
 			// NO break;
 		case PAGE:
 			setCurrentPageData(currentReference);
-			setPreviousPageMenu(currentReference);
-			setNextPageMenu(currentReference);
+			setPreviousPageMenuOf(currentReference);
+			setNextPageMenuOf(currentReference);
 			
 			// clear the old resources
 			clearResources();
@@ -268,7 +268,7 @@ public class Model extends Observable {
 	 * Loads the data from the connector.
 	 * @param currentPageReference of the visible page and not the reference of the next page
 	 */
-	private void setPreviousPageMenu(DataReference currentPageReference) {
+	private void setPreviousPageMenuOf(DataReference currentPageReference) {
 		// that menu has good chance to be in the list
 		if(currentPageReference.getType().equals(DataType.GROUP) ||
 				currentPageReference.equals(
@@ -305,7 +305,7 @@ public class Model extends Observable {
 	 * Find the next page data from the current group's MenuData list.
 	 * @param currentPageReference of the visible page and not the reference of the next page
 	 */
-	private void setNextPageMenu(DataReference currentPageReference) {
+	private void setNextPageMenuOf(DataReference currentPageReference) {
 		for (Iterator<MenuData> iterator = allPagesMenusInCurrentGroup.iterator();
 				iterator.hasNext();) {
 			MenuData menuData = iterator.next();
@@ -434,35 +434,6 @@ public class Model extends Observable {
 	 */
 	public Collection<ResourceData> getAllNeededResources() {
 		return allNeededResources;
-	}
-	
-	/**
-	 * ViewMode indicates to the view what widgets to load
-	 */
-	public enum ViewMode {
-		NONE, BROWSE, EDIT;
-	}
-	
-	/**
-	 * Sets the current view mode
-	 */
-	public void setViewMode(ViewMode viewMode) {
-		System.out.println("Model: setLayout: " +
-				viewMode + " (before: " + getCurrentViewMode() + ")");
-
-		if (this.viewMode.equals(viewMode))
-			return;
-		
-		this.viewMode = viewMode;
-				
-		notifyAllObservers(viewModeObservable);
-	}
-	
-	/**
-	 * @return Get the current view mode.
-	 */
-	public ViewMode getCurrentViewMode() {
-		return viewMode;
 	}
 
 	/**
