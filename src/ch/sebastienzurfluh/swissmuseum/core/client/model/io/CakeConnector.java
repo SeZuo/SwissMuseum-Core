@@ -43,12 +43,18 @@ import ch.sebastienzurfluh.swissmuseum.core.client.model.structure.ResourceData;
  *
  */
 public class CakeConnector implements IOConnector {
-	private final static String CAKE_PATH = "http://www.sebastienzurfluh.ch/swissmuseumbooklets/cakePHPv2/index.php/";
+	private String cakePath;
 	private final static String CAKE_SUFFIX = ".json";
 	private final static String CAKE_ARGS_SEPARATOR = "/";
 
 	public CakeConnector() {
+		this("http://www.sebastienzurfluh.ch/swissmuseumbooklets/cakePHPv2/index.php/");
 	}
+	
+	public CakeConnector(String cakePath) {
+		this.cakePath = cakePath;
+	}
+	
 //	/**
 //	 * The queue will prevent multiple identical requests to be sent.
 //	 * The request will be processed once, then update all the sources.
@@ -61,7 +67,7 @@ public class CakeConnector implements IOConnector {
 			String args,
 			final AsyncCallback<T> callback) {
 
-		final StringBuilder url = new StringBuilder(CAKE_PATH + request.getURL());
+		final StringBuilder url = new StringBuilder(cakePath + request.getURL());
 
 		url.append(CAKE_ARGS_SEPARATOR).append(args);
 		url.append(CAKE_ARGS_SEPARATOR).append(referenceId);

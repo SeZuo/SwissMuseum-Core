@@ -22,15 +22,9 @@
 
 
 /********************** GENERAL ***********************************************/
-
-@font-face {
-	font-family: titleFont;
-	src: url('resources/fonts/scriptbl.ttf');
-}
-
 body {
 	font-size: 16px; /* no px elsewhere */
-	font-family: sans-serif;
+	background: white;
 }
 
 table {
@@ -58,8 +52,6 @@ div {
 }
 
 .mainPanel {
-	width: 600px;
-	height: 30000px;
 }
 
 .animatedPanelView {
@@ -169,7 +161,6 @@ div {
 	margin: 1em;
 	padding: 0em;
 	border: 0em;
-	background-color: white;
 }
 .tile-tileTitle {
 	font-size: 2em;
@@ -254,6 +245,7 @@ div {
 	top: -0.5em;
 }
 
+/* If you want to style the span of the title, for instance, underlining, or strike through. */
 .pageWidget-spanTitle {
 	/* background-color: #8CD9A7 */
 }
@@ -267,7 +259,7 @@ div {
 	background-repeat: no-repeat;
 }
 .pageWidget-content {
-	margin: 0.3em 0em;
+	margin: 0.3em;
 	font-size: 1em;
     font-family: verdana;
     color: #000000;

@@ -21,6 +21,7 @@ package ch.sebastienzurfluh.swissmuseum.core.client.control;
 
 import ch.sebastienzurfluh.swissmuseum.core.client.model.Model;
 import ch.sebastienzurfluh.swissmuseum.core.client.model.io.CakeConnector;
+import ch.sebastienzurfluh.swissmuseum.core.client.model.io.LocalCakeConnector;
 import ch.sebastienzurfluh.swissmuseum.core.client.model.io.TestConnector;
 
 /**
@@ -37,13 +38,13 @@ public class ModelFactory {
 	 * Create the right model depending of the environment. See the Config class for more details.
 	 */
 	public static Model createModel(Config config) {
-		return config.TEST_MODE ? createModel(Connector.TEST) : createModel(Connector.CAKE);
+		return config.isTestMode() ? createModel(Connector.TEST) : createModel(Connector.CAKE);
 	}
 	
 	private static Model createModel(Connector connector) {
 		switch (connector) {
 			case TEST:
-				return new Model(new TestConnector());
+				return new Model(new LocalCakeConnector());
 			case CAKE:
 				return new Model(new CakeConnector());
 			default:

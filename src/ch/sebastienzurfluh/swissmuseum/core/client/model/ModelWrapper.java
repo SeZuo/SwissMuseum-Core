@@ -2,7 +2,6 @@ package ch.sebastienzurfluh.swissmuseum.core.client.model;
 
 import java.util.Collection;
 
-import ch.sebastienzurfluh.swissmuseum.core.client.model.Model.ViewMode;
 import ch.sebastienzurfluh.swissmuseum.core.client.model.io.IConnector;
 import ch.sebastienzurfluh.swissmuseum.core.client.model.structure.Data;
 import ch.sebastienzurfluh.swissmuseum.core.client.model.structure.DataReference;
@@ -46,7 +45,6 @@ public class ModelWrapper {
 		
 		allNeededResourcesObservable = model.allNeededResourcesObservable;
 		
-		viewModeObservable = model.viewModeObservable;
 	}
 	
 	public Observable allGroupsMenusChangesObservable;
@@ -136,19 +134,5 @@ public class ModelWrapper {
 	 */
 	public Collection<ResourceData> getAllNeededResources() {
 		return model.getAllNeededResources();
-	}
-	
-	/**
-	 * Sets the current view mode
-	 */
-	public void setViewMode(ViewMode viewMode) {
-		model.setViewMode(viewMode);
-	}
-	
-	/**
-	 * @return Get the current view mode.
-	 */
-	public ViewMode getCurrentViewMode() {
-		return model.getCurrentViewMode();
 	}
 }

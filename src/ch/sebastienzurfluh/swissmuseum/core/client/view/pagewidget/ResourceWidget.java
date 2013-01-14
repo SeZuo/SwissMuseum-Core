@@ -2,6 +2,7 @@ package ch.sebastienzurfluh.swissmuseum.core.client.view.pagewidget;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.Random;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Image;
@@ -69,6 +70,10 @@ public class ResourceWidget extends SimplePanel implements Observer {
 	@Override
 	public void notifyObserver(Observable source) {
 		for (ResourceData resource : model.getAllNeededResources()) {
+			// The following check is sufficient to determine unicity as there cannot be
+			// two different resources with the same id, be it an IMAGE and a VIDEO.
+			// This is explicitly reflected in the CakeConnector/MySQL by the use of a single
+			// table Resources with an unique key column 'id'.
 			if (resource.getReference().equals(this.getReference())) {
 				switch(resource.getResourceType()) {
 				case IMAGE:
@@ -90,16 +95,18 @@ public class ResourceWidget extends SimplePanel implements Observer {
 					resourceContainer.setWidget(image);
 					break;
 				case VIDEO:
+					int id = Random.nextInt();
 					HTML video = new HTML(
-							"<video controls='controls' class ='" + primaryStyle+videoExtension +
-							"'>" +
-							"<source src='" + resource.getURL() + "' type='video/ogg' />" +
-							"Your browser does not support the video tag." +
-							"</video> <video src=''");
+							"<video id='" + id + "' autobuffer class='" +
+							primaryStyle+videoExtension + "'>" +
+							"<source src='" + resource.getURL() + "' />" +
+							"</video>");
 					resourceContainer.setWidget(video);
+					addStartOnTouch(String.valueOf(id));
 					break;
 				default:
-					// destroy the object. It is never referenced, only attached to it's parent.
+					// Destroy the object. It is never referenced outside of this object, but is
+					// attached to it's parent.
 					this.removeFromParent();
 				}
 				
@@ -111,6 +118,13 @@ public class ResourceWidget extends SimplePanel implements Observer {
 			}
 		}
 	}
+
+	private static native void addStartOnTouch(String id) /*-{
+		var video = document.getElementById(id);
+		video.addEventListener('click',function(){
+  			video.play();
+		},false);
+	}-*/;
 
 	private DataReference getReference() {
 		return reference;

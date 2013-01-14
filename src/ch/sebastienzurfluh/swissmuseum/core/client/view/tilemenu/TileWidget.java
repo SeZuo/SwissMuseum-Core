@@ -21,7 +21,6 @@ package ch.sebastienzurfluh.swissmuseum.core.client.view.tilemenu;
 
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.EventBus;
 import ch.sebastienzurfluh.swissmuseum.core.client.model.Model;
-import ch.sebastienzurfluh.swissmuseum.core.client.model.structure.Data;
 import ch.sebastienzurfluh.swissmuseum.core.client.model.structure.MenuData;
 import ch.sebastienzurfluh.swissmuseum.core.client.patterns.Observable;
 import ch.sebastienzurfluh.swissmuseum.core.client.view.menuinterface.MenuWidget;
