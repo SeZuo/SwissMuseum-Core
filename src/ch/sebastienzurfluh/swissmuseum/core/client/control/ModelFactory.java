@@ -36,7 +36,7 @@ public class ModelFactory {
 	/*
 	 * Create the right model depending of the environment. See the Config class for more details.
 	 */
-	public static Model createModel(Config config) {
+	public static Model createModel(DefaultConfig config) {
 		return config.isTestMode() ? createModel(Connector.TEST) : createModel(Connector.CAKE);
 	}
 	

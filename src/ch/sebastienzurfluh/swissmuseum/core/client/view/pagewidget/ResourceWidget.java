@@ -29,6 +29,7 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.SimplePanel;
 
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.EventBus;
+import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.events.PageModifiedEvent;
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.events.ResourceRequest;
 import ch.sebastienzurfluh.swissmuseum.core.client.model.Model;
 import ch.sebastienzurfluh.swissmuseum.core.client.model.structure.DataReference;
@@ -132,17 +133,23 @@ public class ResourceWidget extends SimplePanel implements Observer {
 				
 				title.setText(resource.getTitle());
 				details.setText(resource.getDetails());
+				
+				eventBus.fireEvent(new PageModifiedEvent());
+				
 				model.allNeededResourcesObservable.unsubscribeObserver(this);
 				return;
 			}
 		}
 	}
 
+	//TODO ensure video is never null!
 	private static native void addStartOnTouch(String id) /*-{
 		var video = document.getElementById(id);
-		video.addEventListener('click',function(){
-  			video.play();
-		},false);
+		if (video != null) {
+			video.addEventListener('click',function(){
+  				video.play();
+			},false);
+		}
 	}-*/;
 
 	private DataReference getReference() {

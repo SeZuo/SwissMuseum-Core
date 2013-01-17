@@ -30,7 +30,7 @@ public abstract class AbstractEvent {
 	 * This enum lists all possible UI (View) event types. 
 	 */
 	public enum EventType {
-		/*
+		/**
 		 *  Fired when a new page is requested.
 		 */
 		PAGE_CHANGE_REQUEST,
@@ -38,15 +38,19 @@ public abstract class AbstractEvent {
 		 *  Fired when a page change is approved.
 		 */
 		PAGE_CHANGE_EVENT,
-		/*
+		/**
+		 * Fired when the page appearance is changed.
+		 */
+		PAGE_MODIFIED_EVENT,
+		/**
 		 *  Fired when a widget finished loading.
 		 */
 		WIDGET_LOADED_EVENT,
-		/*
+		/**
 		 *  Fired when a resource is needed.
 		 */
 		RESOURCE_REQUEST,
-		/*
+		/**
 		 * Fired when the user creates/modifies/deletes a model element
 		 */
 		ACTION,

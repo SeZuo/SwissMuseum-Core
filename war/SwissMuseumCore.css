@@ -119,9 +119,7 @@ div {
 
 .tile {
 	margin-top: 1em;
-	-moz-box-shadow:    inset 0px 0px 10px 2px #EFEFEF;
-  	-webkit-box-shadow: inset 0px 0px 10px 2px #EFEFEF;
- 	box-shadow:       	inset 0px 0px 10px 2px #EFEFEF;
+ 	box-shadow: inset 0px -6px 1px rgba(0, 0, 0, 0.45);
  	border: 1px solid #E0E0E0
 }
 .tile-iconOnly {
@@ -160,6 +158,7 @@ div {
 	margin: 1em;
 	padding: 0em;
 	border: 0em;
+	/* Button effect */
 }
 .tile-tileTitle {
 	font-size: 2em;
@@ -173,6 +172,7 @@ div {
 	margin: 0em;
 	padding: 0em;
 	border: 0em;
+	color: black;
 }
 .tileMenu {
 	font-size: 1em;
@@ -232,6 +232,7 @@ div {
     font-family: titleFont;
     /* color: #FFFFFF; */
     color: #303030;
+    padding: 0em 0em 0em 0.2em;
     overflow: visible;
     width: 100%;
 }
@@ -321,7 +322,7 @@ div {
 }
 
 .resourceGallery {
-	background: #606060;
+	background: #909090;
 	
 	/* zoom a bit the entire panel */
 	font-size: 2em;
