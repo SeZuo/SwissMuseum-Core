@@ -27,6 +27,7 @@ import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.SimplePanel;
+import com.google.gwt.media.client.Video;
 
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.EventBus;
 import ch.sebastienzurfluh.swissmuseum.core.client.control.eventbus.events.PageModifiedEvent;
@@ -117,12 +118,23 @@ public class ResourceWidget extends SimplePanel implements Observer {
 				case VIDEO:
 					int id = Random.nextInt();
 					HTML video = new HTML(
+							"<a href='" + resource.getURL() + "' target='_blank'>" +
 							"<video id='" + id + "' autobuffer class='" +
 							primaryStyle+videoExtension + "'>" +
-							"<source src='" + resource.getURL() + "' />" +
-							"</video>");
+							"<source src='" + resource.getURL() + "' " +
+							"type='video/ogg; codecs=\"theora, vorbis\"'/>" +
+							"</video></a>");
 					resourceContainer.setWidget(video);
-					addStartOnTouch(String.valueOf(id));
+					
+//					Video video = Video.createIfSupported();
+//					if (video == null) {
+//						resourceContainer.setWidget(new Label("Your browser is not able to play"
+//								+ " this video"));
+//					} else {
+//						video.setSrc(resource.getURL());
+//						video.setStyleName(primaryStyle+videoExtension);
+//						resourceContainer.setWidget(video);
+//					}
 					break;
 				default:
 					// Destroy the object. It is never referenced outside of this object, but is
@@ -141,16 +153,6 @@ public class ResourceWidget extends SimplePanel implements Observer {
 			}
 		}
 	}
-
-	//TODO ensure video is never null!
-	private static native void addStartOnTouch(String id) /*-{
-		var video = document.getElementById(id);
-		if (video != null) {
-			video.addEventListener('click',function(){
-  				video.play();
-			},false);
-		}
-	}-*/;
 
 	private DataReference getReference() {
 		return reference;
