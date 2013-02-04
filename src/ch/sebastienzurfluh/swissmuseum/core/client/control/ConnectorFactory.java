@@ -19,14 +19,16 @@
 
 package ch.sebastienzurfluh.swissmuseum.core.client.control;
 
-import ch.sebastienzurfluh.swissmuseum.core.client.model.Model;
+import ch.sebastienzurfluh.swissmuseum.core.client.model.io.CakeConnector;
+import ch.sebastienzurfluh.swissmuseum.core.client.model.io.IOConnector;
+import ch.sebastienzurfluh.swissmuseum.core.client.model.io.LocalCakeConnector;
 
 /**
  * Create test data with this factory.
  * @author Sebastien Zurfluh
  *
  */
-public class ModelFactory {
+public class ConnectorFactory {
 	enum Connector {
 		TEST, CAKE;
 	}
@@ -34,7 +36,18 @@ public class ModelFactory {
 	/*
 	 * Create the right model depending of the environment. See the Config class for more details.
 	 */
-	public static Model createModel(DefaultConfig config) {
-		return new Model(ConnectorFactory.createConnector(config));
+	public static IOConnector createConnector(DefaultConfig config) {
+		return config.isTestMode() ? createConnector(Connector.TEST) : createConnector(Connector.CAKE);
+	}
+	
+	private static IOConnector createConnector(Connector connector) {
+		switch (connector) {
+			case TEST:
+				return new LocalCakeConnector();
+			case CAKE:
+				return new CakeConnector();
+			default:
+				throw(new Error(""));
+		}
 	}
 }
