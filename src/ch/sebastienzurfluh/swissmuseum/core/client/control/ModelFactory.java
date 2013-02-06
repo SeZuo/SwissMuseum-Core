@@ -26,11 +26,7 @@ import ch.sebastienzurfluh.swissmuseum.core.client.model.Model;
  * @author Sebastien Zurfluh
  *
  */
-public class ModelFactory {
-	enum Connector {
-		TEST, CAKE;
-	}
-	
+public class ModelFactory {	
 	/*
 	 * Create the right model depending of the environment. See the Config class for more details.
 	 */

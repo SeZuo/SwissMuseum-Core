@@ -37,21 +37,21 @@ public interface IConnector {
 	 * Get all the group menus.
 	 * @param asyncCallBack says what to do with the result 
 	 */
-	void asyncRequestAllGroupMenus(AsyncCallback<Collection<MenuData>> asyncCallBack);
+	void asyncRequestAllGroupMenus(AsyncCallback<Collection<MenuData>> asyncCallback);
 
 	/**
 	 * Request for the first element in an ordered group.
 	 * @param referenceId of the group 
 	 * @param asyncCallBack says what to do with the result 
 	 */
-	void asyncRequestGetFirstDataOfGroup(int referenceId, AsyncCallback<Data> asyncCallBack);
+	void asyncRequestGetFirstDataOfGroup(int referenceId, AsyncCallback<Data> asyncCallback);
 
 	/**
 	 * Request for the data of the given page.
 	 * @param referenceId of the page 
 	 * @param asyncCallBack says what to do with the result
 	 */
-	void asyncRequestGetData(int referenceId, AsyncCallback<Data> asyncCallBack);
+	void asyncRequestGetData(int referenceId, AsyncCallback<Data> asyncCallback);
 
 	/**
 	 * Request for the menu data of all the elements in the given ordered group.
@@ -59,7 +59,7 @@ public interface IConnector {
 	 * @param asyncCallBack says what to do with the result
 	 */
 	void asyncRequestGetAllPageMenusFromGroup(int referenceId,
-			AsyncCallback<Collection<MenuData>> asyncCallBack);
+			AsyncCallback<Collection<MenuData>> asyncCallback);
 
 	/**
 	 * Request the resource.

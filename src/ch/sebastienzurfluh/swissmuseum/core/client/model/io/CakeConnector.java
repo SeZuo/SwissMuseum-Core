@@ -166,25 +166,10 @@ public class CakeConnector implements IOConnector {
 	private ResourceData parseResourceData(Entry entry, int referenceId) {
 		return new ResourceData(
 				new DataReference(DataType.RESOURCE, referenceId),
-				getResourceType(entry.getResourceType()),
+				ResourceType.fromString(entry.getResourceType()),
 				entry.getResourceTitles(),
 				entry.getResourceDetails(),
 				entry.getResourceURL());
-	}
-
-	/**
-	 * Return the right resource type
-	 * @param resourceType, a string representing the resource type
-	 * @return
-	 */
-	private ResourceType getResourceType(String resourceType) {
-		if (resourceType.equals("img"))
-			return ResourceType.IMAGE;
-		if (resourceType.equals("vid"))
-			return ResourceType.VIDEO;
-		if (resourceType.equals("aud"))
-			return ResourceType.AUDIO;
-		return null;
 	}
 	
 	private DataReference getDataReference(DataType type, Entry entry) {

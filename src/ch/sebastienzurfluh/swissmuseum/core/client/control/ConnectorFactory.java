@@ -29,8 +29,8 @@ import ch.sebastienzurfluh.swissmuseum.core.client.model.io.LocalCakeConnector;
  *
  */
 public class ConnectorFactory {
-	enum Connector {
-		TEST, CAKE;
+	public enum Connector {
+		TEST, CAKE, LOCAL_STORAGE;
 	}
 	
 	/*

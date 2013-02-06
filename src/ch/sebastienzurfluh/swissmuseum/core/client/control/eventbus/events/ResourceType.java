@@ -29,4 +29,14 @@ public enum ResourceType {
 	IMAGE,
 	VIDEO,
 	AUDIO;
+	
+	public static ResourceType fromString(String resourceType) {
+		if (resourceType.equals("img"))
+			return IMAGE;
+		if (resourceType.equals("vid"))
+			return VIDEO;
+		if (resourceType.equals("aud"))
+			return AUDIO;
+		return NONE;
+	}
 }
