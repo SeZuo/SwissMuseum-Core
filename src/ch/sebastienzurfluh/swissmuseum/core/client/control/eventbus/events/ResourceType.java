@@ -31,6 +31,7 @@ public enum ResourceType {
 	AUDIO;
 	
 	public static ResourceType fromString(String resourceType) {
+		System.out.println("ResourceType: fromString: converting " + resourceType);
 		if (resourceType.equals("img"))
 			return IMAGE;
 		if (resourceType.equals("vid"))
