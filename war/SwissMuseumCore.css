@@ -22,9 +22,15 @@
 
 
 /********************** GENERAL ***********************************************/
+@font-face {
+	font-family: titleFont;
+	src: url('resources/fonts/scriptbl.ttf');
+}
+
 body {
 	font-size: 16px; /* no px elsewhere */
 	background: white;
+	text: black;
 }
 
 table {
@@ -59,10 +65,10 @@ div {
 
 .header {
 	width: 37.5em;
-	-moz-box-shadow:    0px 3px 5px 0px #ccc;
-  	-webkit-box-shadow: 0px 3px 5px 0px #ccc;
-  	box-shadow:         0px 3px 5px 0px #ccc;
-  	margin-bottom:		1em;
+	-moz-box-shadow:    0px 3px 0px 1em red;
+  	-webkit-box-shadow: 0px 3px 0px 1em red;
+  	box-shadow:			0px 3px 0px 1em red;
+	margin-bottom: 1.5em;
 }
 
 .returnToTop {
@@ -165,10 +171,11 @@ div {
 	margin: 0em;
 	padding: 0em;
 	border: 0em;
-	font-family: monospace;
+	font-family: titleFont, serif;
 	color: #110000;
 }
 .tile-tileDescription {
+	font-family: sans;
 	margin: 0em;
 	padding: 0em;
 	border: 0em;
@@ -178,6 +185,7 @@ div {
 	font-size: 1em;
 	width: 100%;
 	padding-bottom: 0.5em;
+	padding-top: 0.5em;
 }
 .tileMenu-title {
 	font-size: 2em;
@@ -185,14 +193,20 @@ div {
     color: #110000;
 }
 .tileWidget {
+	margin-top: 0.5em;
 	font-size: 1em;
 	width: 100%;
+	
+	-moz-box-shadow:    0px -5px 15px -5px black;
+  	-webkit-box-shadow: 0px -5px 15px -5px black;
+ 	box-shadow:       	0px -5px 15px -5px black;
 }
 
 .tileMenu-detailButton {
 	margin: 0em 0.5em 0em 0.5em;
 }
 .tileMenu-tileList {
+	padding: 1em;
 }
 
 /********************** WIDGET - FOOTER *************************************/
@@ -229,7 +243,7 @@ div {
 }
 .pageWidget-title {
 	font-size: 3em;
-    font-family: titleFont;
+    font-family: titleFont, serif;
     /* color: #FFFFFF; */
     color: #303030;
     padding: 0em 0em 0em 0.2em;
@@ -248,13 +262,13 @@ div {
 /* If you want to style the span of the title, for instance, underlining, or strike through. */
 .pageWidget-spanTitle {
 	/* background-color: #8CD9A7 */
-    font-family: titleFont;
+    font-family: titleFont, serif;
     /* color: #FFFFFF; */
     color: #303030;
 }
 .pageWidget-header {
 	font-size: 2em;
-	font-family: titleFont;
+	font-family: titleFont, serif;
 	color: #606060;
 	width: 90%;
 	padding: 2em;
@@ -280,7 +294,7 @@ div {
 .pageWidget-resource-title {
 	padding: 0.2em;
 	width: 10em;
-	font-family: titleFont;
+	font-family: titleFont, serif;
 }
 .pageWidget-resource-details {
 	font-style: italic;
@@ -307,7 +321,7 @@ div {
 	
 	padding: 0 0.5em;
 	width: 10em;
-	font-family: titleFont;
+	font-family: titleFont, serif;
 }
 
 .resourceGallery-image-details {
