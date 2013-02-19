@@ -21,9 +21,16 @@ package ch.sebastienzurfluh.swissmuseum.core.client.control;
 
 public class DefaultConfig {
 	/**
-	 * TEST_MODE should be enabled if you want to use the offline test database.
+	 * @return true if you want to use the offline test database.
 	 */
 	public boolean isTestMode() {
+		return false;
+	}
+
+	/**
+	 * @return true, if you want to force the use of a remote DB.
+	 */
+	public boolean isForcedRemoteDB() {
 		return false;
 	}
 }
